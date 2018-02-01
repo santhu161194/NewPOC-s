@@ -17,7 +17,7 @@ public class EngineBatch implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Field("batchId_s")
-	String batchId;
+	Long batchId;
 	
 	@Field("storeReceiptId")
 	Long storeReceiptId;
@@ -61,12 +61,12 @@ public class EngineBatch implements Serializable {
 	@Field("costpriceExtTax")
 	double costPriceExtTax;
 
-	public String getBatchId() {
+	public Long getBatchId() {
 	
 		return batchId;
 	}
 
-	public void setBatchId(String batchId) {
+	public void setBatchId(Long batchId) {
 	
 		this.batchId = batchId;
 	}
