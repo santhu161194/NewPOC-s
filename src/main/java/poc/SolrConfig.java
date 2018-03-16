@@ -29,7 +29,7 @@ public class SolrConfig {
 	
 	public static HttpSolrClient getProductsWriteServer() throws IOException {
 		if (null == batcheswSolrServer) {
-			batcheswSolrServer=new HttpSolrClient.Builder("http://192.168.1.194:8088/medplussolrengine/products").withHttpClient(returnBaseClient()).withConnectionTimeout(6000).build();
+			batcheswSolrServer=new HttpSolrClient.Builder("http://localhost:8088/medplussolrengine/products").withHttpClient(returnBaseClient()).withConnectionTimeout(6000).build();
 		}
 		if(batcheswSolrServer != null)
 			batcheswSolrServer.close();

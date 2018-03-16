@@ -17,10 +17,11 @@ public class SolrPOCOldSolr {
 		batch.setPackSize(15);
 		batch.setBatchId(1013167278l);
 		batch.setProductId("CROC150");
-		commonCreateIndexByPOJO(batch, SolrConfigOldSolr.getProductsReadServer());
+		//commonCreateIndexByPOJO(batch, SolrConfigOldSolr.getProductsReadServer());
 		//System.out.println(deleteById("f2e45d1d-05e0-4f0e-a981-5dec3551c5d0", SolrConfigOldSolr.getProductsReadServer()));
-		List<EngineBatch> beans = query(SolrConfigOldSolr.getProductsReadServer());
-		beans.forEach(bean->System.out.println(bean.getBatchId()));
+		//List<EngineBatch> beans = query(SolrConfigOldSolr.getProductsReadServer());
+		//beans.forEach(bean->System.out.println(bean.getBatchId()));
+		deleteById("1016039840", SolrConfigOldSolr.getProductsReadServer());
 	}
 
 	private static boolean commonCreateIndexByPOJO(Object obj, HttpSolrServer server)
@@ -51,7 +52,8 @@ public class SolrPOCOldSolr {
 	
 	
 	private static int deleteById(String id,HttpSolrServer server) throws SolrServerException, IOException {
-		UpdateResponse b = server.deleteByQuery("batchId_s:1013167278");
+		//UpdateResponse b = server.deleteByQuery("batchId_s:1013167278");
+		UpdateResponse b=server.deleteById(id);
 		server.commit();
 		return b.getStatus();
 		

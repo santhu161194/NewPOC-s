@@ -25,7 +25,7 @@ public class SolrConfigOldSolr {
 	public static HttpSolrServer getProductsReadServer() {
 		if (null == prSolrServer) {
 			try {
-				prSolrServer = new HttpSolrServer("http://192.168.1.196:8983/solr/batches", returnBaseClient());
+				prSolrServer = new HttpSolrServer("http://localhost:8088/medplussolrengine/batches", returnBaseClient());
 				prSolrServer.setConnectionTimeout(60000);
 			} catch (Exception e) {
 				e.printStackTrace();
